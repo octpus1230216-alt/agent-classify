@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doc-batch-pipeline"
+version = "0.1.0"
+description = "批量文档分类处理流水线：格式筛选 -> 必填校验 -> 分类评分 -> 结果登记 -> 分组分配"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "doc-batch-pipeline contributors" }]
+
+dependencies = [
+    "python-docx>=1.1.0",
+    "pdfplumber>=0.11.0",
+    "openpyxl>=3.1.2",
+    "pydantic>=2.5.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0.0",
+    "openai>=1.30.0",
+    "tqdm>=4.66.0",
+]
+
+[project.optional-dependencies]
+data = ["pandas>=2.0.0"]   # 部分环境（如 Python 3.14+）pandas 尚未发布 wheel，可忽略
+ortools = ["ortools>=9.8.0"]
+dev = ["pytest>=7.4.0", "pytest-cov>=4.1.0"]
+
+[project.scripts]
+doc-pipeline = "pipeline.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

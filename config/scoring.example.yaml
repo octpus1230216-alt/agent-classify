@@ -1,0 +1,21 @@
+# 分类与评分规则
+# 使用时复制为 scoring.yaml
+
+categories:
+  - type_a
+  - type_b
+  - type_c
+
+dimensions:
+  - id: dim_a
+    desc: "维度A说明（占位）"
+    weight: 0.4
+    max_score: 40
+
+  - id: dim_b
+    desc: "维度B说明（占位）"
+    weight: 0.6
+    max_score: 60
+
+total: 100
+need_human_threshold: 60

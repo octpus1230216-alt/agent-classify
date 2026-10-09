@@ -1,0 +1,24 @@
+# 字段定义：必填项、类型、取值范围
+# 使用时复制为 schema.yaml
+
+fields:
+  - name: item_id
+    label: "编号"
+    required: true
+    type: string
+
+  - name: tag
+    label: "标签"
+    required: true
+    type: string
+
+  - name: metric_x
+    label: "指标X"
+    required: true
+    type: number
+    valid_range: [0, 100]
+
+  - name: preferences
+    label: "意向列表"
+    required: true
+    type: list[string]

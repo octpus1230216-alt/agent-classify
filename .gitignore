@@ -1,0 +1,29 @@
+# 真实规则与数据不入库
+config/*.yaml
+!config/*.example.yaml
+data/
+!data/**/.gitkeep
+.env
+
+# 文档与结果文件
+*.docx
+*.pdf
+*.xlsx
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp

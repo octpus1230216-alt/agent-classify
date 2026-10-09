@@ -1,0 +1,19 @@
+# 主配置：全局运行参数
+# 使用时复制为 config.yaml 并按需修改
+
+llm:
+  provider: openai            # openai | qwen | deepseek（均走 OpenAI 兼容接口）
+  model: gpt-4o-mini
+  temperature: 0.0
+  cache: true                 # 相同内容命中缓存则不重复调用
+  max_retries: 2
+
+paths:
+  input: data/input
+  output: data/output
+  review: data/review
+  logs: data/logs
+
+pipeline:
+  flush_every: 10             # Stage4 每 N 条落盘一次
+  review_output: review_queue.xlsx
